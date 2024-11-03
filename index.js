@@ -1,7 +1,8 @@
 import http from "http"
 import { percentage } from "./feature.js"
-
+import fs from "fs"
 const server = http.createServer((req, res) => {
+    //--->First learning----------->
     // if (req.url === "/percentage") {
     //     res.end(`
     //         <html>
@@ -29,7 +30,10 @@ const server = http.createServer((req, res) => {
     // } else {
     //     res.end("404 Not Found");
     // }
-    
+    //---------------------------------------------------------------------
+   fs.readFile('hello.txt',(err,data)=>{
+      res.end(data)
+   })
 });
 server.listen(5000,()=>{
     console.log("Server is listening")
