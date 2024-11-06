@@ -18,7 +18,6 @@ app.get('/profile',(req,res)=>{
     res.send("<h1>This is Profile Page</h1>")//er moddheo html diye lekha jabe
 })
 
-
 app.listen(PORT,()=>{
     console.log("Server is listening")
 })
