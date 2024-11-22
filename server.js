@@ -4,19 +4,29 @@ const app=express();
 const PORT=5000;
 app.set("view engine","ejs")
 
+// app.get('/',(req,res)=>{
+//     // res.sendStatus(200)//OK
+//     // res.sendStatus(403)//Forbidden
+//     // res.sendStatus(404)//Not Found
+//     // res.sendStatus(500)//Internal Server Error
+//     // res.json({//to send the json data
+//     //     success:true,
+//     //     products:[]
+//     // })
+//     //-----This is about pathlocation----
+//     // const pathlocation=path.resolve();
+//     // res.sendFile(path.join(pathlocation,"index.html"))
+// })
+app.use(express.static(path.join(path.resolve(),"public")))
 app.get('/',(req,res)=>{
-    // res.sendStatus(200)//OK
-    // res.sendStatus(403)//Forbidden
-    // res.sendStatus(404)//Not Found
-    // res.sendStatus(500)//Internal Server Error
-    // res.json({//to send the json data
-    //     success:true,
-    //     products:[]
+    //this is how we can load an ejs file
+    // res.render("index",{
+    //     age1:23,
+    //     age2:56
     // })
-    const pathlocation=path.resolve();
-    res.sendFile(path.join(pathlocation,"index.html"))
+    //  res.sendFile("index")
+    res.render("index")
 })
-
 app.get('/contact',(req,res)=>{
     res.send("This is Contact page")
 })
